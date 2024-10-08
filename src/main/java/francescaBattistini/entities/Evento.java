@@ -1,12 +1,28 @@
 package francescaBattistini.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
+//parte 1.
+@Entity //questa classe dovrà essere mappata ad una specifica tabbela nel dp  e sarà hyb  a creare la tabella
+// e la modificherà se sarà necessaria FILO INVISIBILE TRA LE DUE
+@Table (name = "evento")//2.non è necessaria serve per personalizzare il nome della tabella
+
 
 public class Evento  {
+
+    @Id //obligatoria serve per indicare la colonna chiave primaria della mia tabella
     private long id;
+    @Column(name = "titolo", nullable = false) //serve per personalizzare la colonna (nome,notnull,true/false, lunghezza campo ecc)
     private String titolo;
+    @Column(name = "data", nullable = false)
     private LocalDate dataEvento;
+    @Column(name = "tipo_evento")
     private TipoEvento tipoEvento;
+    @Column(name = "numero", nullable = false)
     private int numeroMassimoPartecipanti;
 
 
