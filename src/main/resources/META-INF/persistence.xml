@@ -12,7 +12,7 @@
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- crea e aggiorna le tabelle-->
             <!-- Quest'ultima impostazione serve per chiedere a Hibernate di crearci le tabelle se non esistono nel db
             oppure se esistono modificarle se necessario -->
         </properties>
