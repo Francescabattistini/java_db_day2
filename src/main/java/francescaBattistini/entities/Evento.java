@@ -21,9 +21,14 @@ public class Evento  {
     private String titolo;
     @Column(name = "data", nullable = false)
     private LocalDate dataEvento;
+
+    @Column(name = "descrizione")
+    private String descrizione;
+
     @Column(name = "tipo_evento")
     @Enumerated(EnumType.STRING)
     private TipoEvento tipoEvento;
+
     @Column(name = "numero", nullable = false)
     private int numeroMassimoPartecipanti;
 
@@ -32,9 +37,10 @@ public class Evento  {
 
     }
 
-    public Evento(String titolo, LocalDate dataEvento, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+    public Evento( String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
+        this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
@@ -42,6 +48,8 @@ public class Evento  {
     public long getId() {
         return id;
     }
+
+
 
     public String getTitolo() {
         return titolo;
@@ -57,6 +65,14 @@ public class Evento  {
 
     public void setDataEvento(LocalDate dataEvento) {
         this.dataEvento = dataEvento;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
     public TipoEvento getTipoEvento() {
@@ -75,13 +91,13 @@ public class Evento  {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
-
     @Override
     public String toString() {
         return "Evento{" +
                 "id=" + id +
                 ", titolo='" + titolo + '\'' +
                 ", dataEvento=" + dataEvento +
+                ", descrizione='" + descrizione + '\'' +
                 ", tipoEvento=" + tipoEvento +
                 ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
                 '}';
